@@ -16,15 +16,15 @@ app.get('/', function (req, res) {
 
 
 //mysql configuration
-var mysqlHost = process.env.OPENSHIFT_MYSQL_DB_HOST || 'mysql-gamification.inmbzp8022.in.dst.ibm.com';
+var mysqlHost = process.env.OPENSHIFT_MYSQL_DB_HOST || 'jdbc:mysql://mysql.gamification.svc.cluster.local:3306/mysql';
 var mysqlPort = process.env.OPENSHIFT_MYSQL_DB_PORT || 3306;
 var mysqlUser = 'xxuser'; //mysql username
 var mysqlPass = 'welcome1'; //mysql password
 var mysqlDb = 'sampledb'; //mysql database name
 
 //connection strings
-var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/' + mysqlDb;
-
+//var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/' + mysqlDb;
+var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + '/' + mysqlDb;
 
 //connect to mysql
 var mysqlClient = mysql.createConnection(mysqlString);
