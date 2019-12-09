@@ -59,9 +59,9 @@ app.get('/products/:id', function (req, res) {
     if (!item_number) {
         return res.status(400).send({ error: true, message: 'Please provide product sku number' });
     }
-    dbConn.query('SELECT * FROM XXIBM_PRODUCT_SKU where Item Number=?', item_number, function (error, results, fields) {
+    mysqlClient.query('SELECT * FROM XXIBM_PRODUCT_SKU where Item Number=?', item_number, function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'users list.' });
+        return res.send({ error: false, data: results[0], message: 'product list.' });
     });
 });
 
