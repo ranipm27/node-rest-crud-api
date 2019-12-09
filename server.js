@@ -9,6 +9,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+	
+app.use("/products",products);
+	
+
 // default route
 app.get('/', function (req, res) {
     return res.send({ error: true, message: 'hello' })
