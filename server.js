@@ -62,7 +62,8 @@ app.get('/products/:id', function (req, res) {
     let item_number_int = parseInt(req.params.id);
     mysqlClient.query('SELECT * FROM XXIBM_PRODUCT_SKU WHERE "Item Number" = ? ', item_number_int, function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'product list.' });
+        //return res.send({ error: false, data: results[0], message: 'product list.' });
+        res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
     });
 });
 
