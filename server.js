@@ -16,11 +16,11 @@ app.get('/', function (req, res) {
 
 
 //mysql configuration
-var mysqlHost = process.env.OPENSHIFT_MYSQL_DB_HOST || 'jdbc:mysql://mysql.gamification.svc.cluster.local';
+var mysqlHost = process.env.OPENSHIFT_MYSQL_DB_HOST || 'jdbc://mysql.database-check.svc.cluster.local';
 var mysqlPort = process.env.OPENSHIFT_MYSQL_DB_PORT || 3306;
-var mysqlUser = 'xxuser'; //mysql username
+var mysqlUser = 'ccuser'; //mysql username
 var mysqlPass = 'welcome1'; //mysql password
-var mysqlDb = 'sampledb'; //mysql database name
+var mysqlDb = 'productdb'; //mysql database name
 
 //connection strings
 var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/mysql/' + mysqlDb;
