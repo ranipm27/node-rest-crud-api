@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 	
-app.use("/products",products);
+app.use('/api/v1/products', products);
 	
 
 // default route
