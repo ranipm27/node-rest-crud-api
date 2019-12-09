@@ -23,7 +23,7 @@ var mysqlPass = 'welcome1'; //mysql password
 var mysqlDb = 'productdb'; //mysql database name
 
 //connection strings
-var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/mysql/' + mysqlDb;
+var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/' + mysqlDb;
 
 
 //connect to mysql
