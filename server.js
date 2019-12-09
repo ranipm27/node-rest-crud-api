@@ -60,7 +60,7 @@ app.get('/products/:id', function (req, res) {
         return res.status(400).send({ error: true, message: 'Please provide product sku number' });
     }
     let item_number_int = parseInt(req.params.id);
-    mysqlClient.query('SELECT * FROM XXIBM_PRODUCT_SKU WHERE Item Number = ?', item_number_int, function (error, results, fields) {
+    mysqlClient.query('SELECT * FROM XXIBM_PRODUCT_SKU WHERE "Item Number" = ? ', item_number_int, function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results[0], message: 'product list.' });
     });
