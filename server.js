@@ -31,7 +31,13 @@ var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + '
 
 
 //connect to mysql
-var mysqlClient = mysql.createConnection(mysqlString);
+var mysqlClient = mysql.createConnection({
+  host     : 'mysql.database-check.svc.cluster.local',
+  port     : '3306',
+  user     : 'ccuser',
+  password : 'welcome1',
+  database : 'productdb'
+ });
 mysqlClient.connect(function (err) {
     if (err) console.log(err);
 });
