@@ -22,9 +22,9 @@ app.get('/', function (req, res) {
 //mysql configuration
 var mysqlHost = process.env.OPENSHIFT_MYSQL_DB_HOST || 'mysql.database-check.svc.cluster.local';
 var mysqlPort = process.env.OPENSHIFT_MYSQL_DB_PORT || 3306;
-var mysqlUser = 'ccuser'; //mysql username
+var mysqlUser = 'xxuser'; //mysql username
 var mysqlPass = 'welcome1'; //mysql password
-var mysqlDb = 'productdb'; //mysql database name
+var mysqlDb = 'sampledb'; //mysql database name
 
 //connection strings
 var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/' + mysqlDb;
@@ -34,9 +34,9 @@ var mysqlString = 'mysql://' + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + '
 var mysqlClient = mysql.createConnection({
   host     : 'mysql.database-check.svc.cluster.local',
   port     : '3306',
-  user     : 'ccuser',
+  user     : 'xxuser',
   password : 'welcome1',
-  database : 'productdb'
+  database : 'sampledb'
  });
 mysqlClient.connect(function (err) {
     if (err) console.log(err);
